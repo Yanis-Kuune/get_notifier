@@ -1,6 +1,5 @@
-# get_notifier
-
-A new flutter plugin project.
+# get_notifier plugin
+GetNotifier is aimed to combine the power of ChangNotifier and GetIt DI plugin to work together. It is the way to awoid context tracking over different part of the app.
 
 ## Getting Started
 
