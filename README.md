@@ -1,5 +1,5 @@
 # get_notifier plugin
-GetNotifier is aimed to combine the power of ChangNotifier and GetIt DI plugin to work together. It is the way to avoid context tracking over a different part of the app.
+GetNotifier aims to combine the power of ChangNotifier and GetIt DI plugin to work together. It is the way to avoid context tracking over a different part of the app.
 
 Features:
 * Use Get_It plugin [get_it](https://github.com/fluttercommunity/get_it/) to inject singleton or factory dependencies anywhere in the code;
