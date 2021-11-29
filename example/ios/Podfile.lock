@@ -1,0 +1,22 @@
+PODS:
+  - Flutter (1.0.0)
+  - get_notifier (0.0.1):
+    - Flutter
+
+DEPENDENCIES:
+  - Flutter (from `Flutter`)
+  - get_notifier (from `.symlinks/plugins/get_notifier/ios`)
+
+EXTERNAL SOURCES:
+  Flutter:
+    :path: Flutter
+  get_notifier:
+    :path: ".symlinks/plugins/get_notifier/ios"
+
+SPEC CHECKSUMS:
+  Flutter: 50d75fe2f02b26cc09d224853bb45737f8b3214a
+  get_notifier: eaa9af035e4aa7fc4f2baf9119eef95652501534
+
+PODFILE CHECKSUM: 8e679eca47255a8ca8067c4c67aab20e64cb974d
+
+COCOAPODS: 1.11.2
