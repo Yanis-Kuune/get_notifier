@@ -12,7 +12,7 @@ dependencies:
   get_it:
   get_notifier:
 ```
-Run
+Then run
 ```sh
 flutter pub get
 ```
@@ -33,7 +33,7 @@ class AppModel extends ChangeNotifier {
   }
 }
 ```
-- Register it into the application
+- Register it into the application together with other DI parts
 __main.dart__
 ```dart
 import 'package:flutter/material.dart';
@@ -124,6 +124,8 @@ class MyHomePage extends StatelessWidget {
 }
 ```
 
+That's it!
+
 ### More about
 
 This project is a starting point for a Flutter
@@ -135,3 +137,4 @@ For help getting started with Flutter, view our
 [online documentation](https://flutter.dev/docs), which offers tutorials,
 samples, guidance on mobile development, and a full API reference.
 
+Happy coding.
