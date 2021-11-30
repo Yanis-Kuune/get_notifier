@@ -59,7 +59,8 @@ class ConsumerState<A extends Object> extends SingleChildState<Consumer<A>> {
 }
 
 // 3 models consumer
-class Consumer2<A extends Object, B extends Object> extends SingleChildStatefulWidget {
+class Consumer2<A extends Object, B extends Object>
+    extends SingleChildStatefulWidget {
   const Consumer2({
     Key? key,
     required this.builder,
@@ -78,7 +79,8 @@ class Consumer2<A extends Object, B extends Object> extends SingleChildStatefulW
   }
 }
 
-class Consumer2State<A extends Object, B extends Object> extends SingleChildState<Consumer2<A, B>> {
+class Consumer2State<A extends Object, B extends Object>
+    extends SingleChildState<Consumer2<A, B>> {
   void update() => setState(() => {});
   final a = GetIt.I.get<A>();
   final b = GetIt.I.get<B>();
@@ -107,7 +109,8 @@ class Consumer2State<A extends Object, B extends Object> extends SingleChildStat
 }
 
 // 3 models consumer
-class Consumer3<A extends Object, B extends Object, C extends Object> extends SingleChildStatefulWidget {
+class Consumer3<A extends Object, B extends Object, C extends Object>
+    extends SingleChildStatefulWidget {
   const Consumer3({
     Key? key,
     required this.builder,
@@ -161,8 +164,8 @@ class Consumer3State<A extends Object, B extends Object, C extends Object>
 }
 
 // 4 models consumer
-class Consumer4<A extends Object, B extends Object, C extends Object, D extends Object>
-    extends SingleChildStatefulWidget {
+class Consumer4<A extends Object, B extends Object, C extends Object,
+    D extends Object> extends SingleChildStatefulWidget {
   const Consumer4({
     Key? key,
     required this.builder,
@@ -183,8 +186,8 @@ class Consumer4<A extends Object, B extends Object, C extends Object, D extends 
   }
 }
 
-class Consumer4State<A extends Object, B extends Object, C extends Object, D extends Object>
-    extends SingleChildState<Consumer4<A, B, C, D>> {
+class Consumer4State<A extends Object, B extends Object, C extends Object,
+    D extends Object> extends SingleChildState<Consumer4<A, B, C, D>> {
   void update() => setState(() => {});
   final a = GetIt.I.get<A>();
   final b = GetIt.I.get<B>();
@@ -221,8 +224,8 @@ class Consumer4State<A extends Object, B extends Object, C extends Object, D ext
 }
 
 // 5 models consumer
-class Consumer5<A extends Object, B extends Object, C extends Object, D extends Object, E extends Object>
-    extends SingleChildStatefulWidget {
+class Consumer5<A extends Object, B extends Object, C extends Object,
+    D extends Object, E extends Object> extends SingleChildStatefulWidget {
   const Consumer5({
     Key? key,
     required this.builder,
@@ -244,8 +247,12 @@ class Consumer5<A extends Object, B extends Object, C extends Object, D extends 
   }
 }
 
-class Consumer5State<A extends Object, B extends Object, C extends Object, D extends Object, E extends Object>
-    extends SingleChildState<Consumer5<A, B, C, D, E>> {
+class Consumer5State<
+    A extends Object,
+    B extends Object,
+    C extends Object,
+    D extends Object,
+    E extends Object> extends SingleChildState<Consumer5<A, B, C, D, E>> {
   void update() => setState(() => {});
   final a = GetIt.I.get<A>();
   final b = GetIt.I.get<B>();
@@ -286,9 +293,14 @@ class Consumer5State<A extends Object, B extends Object, C extends Object, D ext
 }
 
 // 6 models consumer
-class Consumer6<A extends Object, B extends Object, C extends Object, D extends Object, E extends Object,
+class Consumer6<
+    A extends Object,
+    B extends Object,
+    C extends Object,
+    D extends Object,
+    E extends Object,
     F extends Object> extends SingleChildStatefulWidget {
-  Consumer6({
+  const Consumer6({
     Key? key,
     required this.builder,
     Widget? child,
@@ -310,7 +322,12 @@ class Consumer6<A extends Object, B extends Object, C extends Object, D extends 
   }
 }
 
-class Consumer6State<A extends Object, B extends Object, C extends Object, D extends Object, E extends Object,
+class Consumer6State<
+    A extends Object,
+    B extends Object,
+    C extends Object,
+    D extends Object,
+    E extends Object,
     F extends Object> extends SingleChildState<Consumer6<A, B, C, D, E, F>> {
   void update() => setState(() => {});
   final a = GetIt.I.get<A>();
