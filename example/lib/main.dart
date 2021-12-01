@@ -49,7 +49,8 @@ class MyHomePage extends StatelessWidget {
                 appBar: AppBar(
                   title: Text(title),
                 ),
-                body: Consumer<AppModel>(builder: (appModel, child) {
+                body: Consumer2<AppModel, Service>(
+                    builder: (appModel, service, child) {
                   return Center(
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.center,
@@ -61,6 +62,9 @@ class MyHomePage extends StatelessWidget {
                           appModel.counter.toString(),
                           style: Theme.of(context).textTheme.headline4,
                         ),
+                        ElevatedButton(
+                            onPressed: service.incrementCounter,
+                            child: const Text('Increment'))
                       ],
                     ),
                   );

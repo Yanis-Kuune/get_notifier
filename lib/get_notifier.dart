@@ -39,13 +39,13 @@ class ConsumerState<A extends Object> extends SingleChildState<Consumer<A>> {
   final a = GetIt.I.get<A>();
   @override
   void initState() {
-    (a as ChangeNotifier).addListener(update);
+    if (a is ChangeNotifier) (a as ChangeNotifier).addListener(update);
     super.initState();
   }
 
   @override
   void dispose() {
-    (a as ChangeNotifier).removeListener(update);
+    if (a is ChangeNotifier) (a as ChangeNotifier).removeListener(update);
     super.dispose();
   }
 
@@ -86,15 +86,15 @@ class Consumer2State<A extends Object, B extends Object>
   final b = GetIt.I.get<B>();
   @override
   void initState() {
-    (a as ChangeNotifier).addListener(update);
-    (b as ChangeNotifier).addListener(update);
+    if (a is ChangeNotifier) (a as ChangeNotifier).addListener(update);
+    if (b is ChangeNotifier) (b as ChangeNotifier).addListener(update);
     super.initState();
   }
 
   @override
   void dispose() {
-    (a as ChangeNotifier).removeListener(update);
-    (b as ChangeNotifier).removeListener(update);
+    if (a is ChangeNotifier) (a as ChangeNotifier).removeListener(update);
+    if (b is ChangeNotifier) (b as ChangeNotifier).removeListener(update);
     super.dispose();
   }
 
@@ -138,17 +138,17 @@ class Consumer3State<A extends Object, B extends Object, C extends Object>
   final c = GetIt.I.get<C>();
   @override
   void initState() {
-    (a as ChangeNotifier).addListener(update);
-    (b as ChangeNotifier).addListener(update);
-    (c as ChangeNotifier).addListener(update);
+    if (a is ChangeNotifier) (a as ChangeNotifier).addListener(update);
+    if (b is ChangeNotifier) (b as ChangeNotifier).addListener(update);
+    if (c is ChangeNotifier) (c as ChangeNotifier).addListener(update);
     super.initState();
   }
 
   @override
   void dispose() {
-    (a as ChangeNotifier).removeListener(update);
-    (b as ChangeNotifier).removeListener(update);
-    (c as ChangeNotifier).removeListener(update);
+    if (a is ChangeNotifier) (a as ChangeNotifier).removeListener(update);
+    if (b is ChangeNotifier) (b as ChangeNotifier).removeListener(update);
+    if (c is ChangeNotifier) (c as ChangeNotifier).removeListener(update);
     super.dispose();
   }
 
@@ -195,19 +195,19 @@ class Consumer4State<A extends Object, B extends Object, C extends Object,
   final d = GetIt.I.get<D>();
   @override
   void initState() {
-    (a as ChangeNotifier).addListener(update);
-    (b as ChangeNotifier).addListener(update);
-    (c as ChangeNotifier).addListener(update);
-    (d as ChangeNotifier).addListener(update);
+    if (a is ChangeNotifier) (a as ChangeNotifier).addListener(update);
+    if (b is ChangeNotifier) (b as ChangeNotifier).addListener(update);
+    if (c is ChangeNotifier) (c as ChangeNotifier).addListener(update);
+    if (d is ChangeNotifier) (d as ChangeNotifier).addListener(update);
     super.initState();
   }
 
   @override
   void dispose() {
-    (a as ChangeNotifier).removeListener(update);
-    (b as ChangeNotifier).removeListener(update);
-    (c as ChangeNotifier).removeListener(update);
-    (d as ChangeNotifier).removeListener(update);
+    if (a is ChangeNotifier) (a as ChangeNotifier).removeListener(update);
+    if (b is ChangeNotifier) (b as ChangeNotifier).removeListener(update);
+    if (c is ChangeNotifier) (c as ChangeNotifier).removeListener(update);
+    if (d is ChangeNotifier) (d as ChangeNotifier).removeListener(update);
     super.dispose();
   }
 
@@ -261,21 +261,21 @@ class Consumer5State<
   final e = GetIt.I.get<E>();
   @override
   void initState() {
-    (a as ChangeNotifier).addListener(update);
-    (b as ChangeNotifier).addListener(update);
-    (c as ChangeNotifier).addListener(update);
-    (d as ChangeNotifier).addListener(update);
-    (e as ChangeNotifier).addListener(update);
+    if (a is ChangeNotifier) (a as ChangeNotifier).addListener(update);
+    if (b is ChangeNotifier) (b as ChangeNotifier).addListener(update);
+    if (c is ChangeNotifier) (c as ChangeNotifier).addListener(update);
+    if (d is ChangeNotifier) (d as ChangeNotifier).addListener(update);
+    if (e is ChangeNotifier) (e as ChangeNotifier).addListener(update);
     super.initState();
   }
 
   @override
   void dispose() {
-    (a as ChangeNotifier).removeListener(update);
-    (b as ChangeNotifier).removeListener(update);
-    (c as ChangeNotifier).removeListener(update);
-    (d as ChangeNotifier).removeListener(update);
-    (e as ChangeNotifier).removeListener(update);
+    if (a is ChangeNotifier) (a as ChangeNotifier).removeListener(update);
+    if (b is ChangeNotifier) (b as ChangeNotifier).removeListener(update);
+    if (c is ChangeNotifier) (c as ChangeNotifier).removeListener(update);
+    if (d is ChangeNotifier) (d as ChangeNotifier).removeListener(update);
+    if (e is ChangeNotifier) (e as ChangeNotifier).removeListener(update);
     super.dispose();
   }
 
@@ -338,23 +338,23 @@ class Consumer6State<
   final f = GetIt.I.get<F>();
   @override
   void initState() {
-    (a as ChangeNotifier).addListener(update);
-    (b as ChangeNotifier).addListener(update);
-    (c as ChangeNotifier).addListener(update);
-    (d as ChangeNotifier).addListener(update);
-    (e as ChangeNotifier).addListener(update);
-    (f as ChangeNotifier).addListener(update);
+    if (a is ChangeNotifier) (a as ChangeNotifier).addListener(update);
+    if (b is ChangeNotifier) (b as ChangeNotifier).addListener(update);
+    if (c is ChangeNotifier) (c as ChangeNotifier).addListener(update);
+    if (d is ChangeNotifier) (d as ChangeNotifier).addListener(update);
+    if (e is ChangeNotifier) (e as ChangeNotifier).addListener(update);
+    if (f is ChangeNotifier) (f as ChangeNotifier).addListener(update);
     super.initState();
   }
 
   @override
   void dispose() {
-    (a as ChangeNotifier).removeListener(update);
-    (b as ChangeNotifier).removeListener(update);
-    (c as ChangeNotifier).removeListener(update);
-    (d as ChangeNotifier).removeListener(update);
-    (e as ChangeNotifier).removeListener(update);
-    (f as ChangeNotifier).removeListener(update);
+    if (a is ChangeNotifier) (a as ChangeNotifier).removeListener(update);
+    if (b is ChangeNotifier) (b as ChangeNotifier).removeListener(update);
+    if (c is ChangeNotifier) (c as ChangeNotifier).removeListener(update);
+    if (d is ChangeNotifier) (d as ChangeNotifier).removeListener(update);
+    if (e is ChangeNotifier) (e as ChangeNotifier).removeListener(update);
+    if (f is ChangeNotifier) (f as ChangeNotifier).removeListener(update);
     super.dispose();
   }
 
