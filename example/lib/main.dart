@@ -5,10 +5,10 @@ import 'package:get_notifier_example/app_model.dart';
 import 'package:get_notifier_example/helper.dart';
 
 // This is our global ServiceLocator
-GetIt getIt = GetIt.instance;
+// GetIt getIt = GetIt.instance;
 
 void main() {
-  getIt
+  GetIt.instance
     ..registerSingleton(AppModel(), signalsReady: true)
     ..registerFactory(() => Service());
 
@@ -42,15 +42,14 @@ class MyHomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Material(
       child: FutureBuilder(
-          future: getIt.allReady(),
+          future: GetIt.I.allReady(),
           builder: (context, snapshot) {
             if (snapshot.hasData) {
               return Scaffold(
                 appBar: AppBar(
                   title: Text(title),
                 ),
-                body: Consumer2<AppModel, Service>(
-                    builder: (appModel, service, child) {
+                body: Consumer2<AppModel, Service>(builder: (appModel, service, child) {
                   return Center(
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.center,
@@ -62,9 +61,7 @@ class MyHomePage extends StatelessWidget {
                           appModel.counter.toString(),
                           style: Theme.of(context).textTheme.headline4,
                         ),
-                        ElevatedButton(
-                            onPressed: service.incrementCounter,
-                            child: const Text('Increment'))
+                        ElevatedButton(onPressed: service.incrementCounter, child: const Text('Increment'))
                       ],
                     ),
                   );

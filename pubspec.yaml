@@ -1,6 +1,6 @@
 name: get_notifier
 description: Flutter plugin to use the power of ChangeNotifier and GetIt together.
-version: 0.0.3
+version: 0.0.4
 homepage: 
 repository: https://github.com/Yanis-Kuune/get_notifier
 
