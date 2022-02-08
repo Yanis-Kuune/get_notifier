@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:get_it/get_it.dart';
 import 'package:get_notifier/get_notifier.dart';
 import 'package:get_notifier_example/app_model.dart';
 import 'package:get_notifier_example/helper.dart';
@@ -50,6 +49,7 @@ class MyHomePage extends StatelessWidget {
                   title: Text(title),
                 ),
                 body: Consumer2<AppModel, Service>(builder: (appModel, service, child) {
+                  print(appModel.counter);
                   return Center(
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.center,

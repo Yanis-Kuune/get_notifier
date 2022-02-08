@@ -11,3 +11,6 @@
 ## 0.0.4
 
 * Add widget and unit test to Example app.
+## 0.0.5
+
+* Add export of get_it to avoid extra imports.

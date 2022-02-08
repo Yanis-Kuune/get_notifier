@@ -9,7 +9,6 @@ Features:
 ```yaml
 dependencies:
   ...
-  get_it:
   get_notifier:
 ```
 Then run
@@ -37,7 +36,6 @@ class AppModel extends ChangeNotifier {
 __main.dart__
 ```dart
 import 'package:flutter/material.dart';
-import 'package:get_it/get_it.dart';
 import 'package:get_notifier/get_notifier.dart';
 import 'package:get_notifier_example/app_model.dart';
 import 'package:get_notifier_example/service.dart';
@@ -55,7 +53,6 @@ void main() {
 - You now can separate state from mutation actions for the sake of code readability
 __service.dart__
 ```dart
-import 'package:get_it/get_it.dart';
 import 'package:get_notifier_example/app_model.dart';
 
 class Service {
