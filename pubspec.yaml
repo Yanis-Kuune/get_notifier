@@ -42,8 +42,6 @@ flutter:
       web:
         pluginClass: GetNotifierWeb
         fileName: get_notifier_web.dart
-      windows:
-        dartPluginClass: GetNotifierWindows
 
   # To add assets to your plugin package, add an assets section, like this:
   # assets:

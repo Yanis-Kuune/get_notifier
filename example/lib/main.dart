@@ -35,7 +35,7 @@ class MyHomePage extends StatelessWidget {
 
   final String title;
 
-  // final s = GetIt.I.get<Service>();
+  final am = GetIt.I.get<AppModel>();
 
   @override
   Widget build(BuildContext context) {
@@ -49,7 +49,6 @@ class MyHomePage extends StatelessWidget {
                   title: Text(title),
                 ),
                 body: Consumer2<AppModel, Service>(builder: (appModel, service, child) {
-                  print(appModel.counter);
                   return Center(
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.center,
@@ -61,7 +60,17 @@ class MyHomePage extends StatelessWidget {
                           appModel.counter.toString(),
                           style: Theme.of(context).textTheme.headline4,
                         ),
-                        ElevatedButton(onPressed: service.incrementCounter, child: const Text('Increment'))
+                        ElevatedButton(
+                            onPressed: () {
+                              appModel.counter += 1;
+                            },
+                            child: const Text('Straight Increment')),
+                        ElevatedButton(onPressed: service.incrementCounter, child: const Text('Service Increment')),
+                        ElevatedButton(
+                            onPressed: () {
+                              am.counter += 1;
+                            },
+                            child: const Text('Other Increment'))
                       ],
                     ),
                   );
@@ -69,7 +78,7 @@ class MyHomePage extends StatelessWidget {
                 floatingActionButton: Worker<Service>(builder: (s, child) {
                   return FloatingActionButton(
                     onPressed: () {
-                      s.incrementCounter();
+                      s.decrementCounter();
                     },
                     tooltip: 'Increment',
                     child: const Icon(Icons.add),

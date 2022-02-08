@@ -6,4 +6,8 @@ class Service {
   void incrementCounter() {
     appModel.counter += 1;
   }
+
+  void decrementCounter() {
+    appModel.counter -= 1;
+  }
 }
