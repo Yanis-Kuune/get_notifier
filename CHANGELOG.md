@@ -14,3 +14,6 @@
 ## 0.0.5
 
 * Add export of get_it to avoid extra imports.
+## 0.0.6
+
+* Add Worker classes to deal with stateless events.

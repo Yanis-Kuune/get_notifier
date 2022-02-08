@@ -35,7 +35,7 @@ class MyHomePage extends StatelessWidget {
 
   final String title;
 
-  final s = GetIt.I.get<Service>();
+  // final s = GetIt.I.get<Service>();
 
   @override
   Widget build(BuildContext context) {
@@ -66,14 +66,15 @@ class MyHomePage extends StatelessWidget {
                     ),
                   );
                 }),
-                floatingActionButton: FloatingActionButton(
-                  onPressed: () {
-                    // getIt<AppModel>().incrementCounter();
-                    s.incrementCounter();
-                  },
-                  tooltip: 'Increment',
-                  child: const Icon(Icons.add),
-                ),
+                floatingActionButton: Worker<Service>(builder: (s, child) {
+                  return FloatingActionButton(
+                    onPressed: () {
+                      s.incrementCounter();
+                    },
+                    tooltip: 'Increment',
+                    child: const Icon(Icons.add),
+                  );
+                }),
               );
             } else {
               return Column(

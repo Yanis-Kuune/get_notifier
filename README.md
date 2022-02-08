@@ -75,6 +75,16 @@ To make reactive part of the UI, which rebuilds due to the ```notifyListrers()``
 
 where A, B, C, D, E, and F are ChangeNotifier state classes
 
+To make passive part of the UI, which does not rebuild due to the ```notifyListrers()``` method of ChangeNotifier ancestor simply use one of six Workers:
+1. Worker\<A\>(builder: (a, child)=> ...)
+2. Worker2<A, B>(builder: (a,b, child)=> ...)
+3. Worker3<A, B, C>(builder: (a,b,c, child)=> ...)
+4. Worker4<A, B, C, D>(builder: (a,b,c,d, child)=> ...)
+5. Worker5<A, B, C, D, E>(builder: (a,b,c,d,e, child)=> ...)
+6. Worker6<A, B, C, D, E, F>(builder: (a,b,c,d,e,f, child)=> ...)
+
+where A, B, C, D, E, and F are ChangeNotifier state classes
+
 For example:
 ```dart
 import 'package:flutter/material.dart';
@@ -85,35 +95,37 @@ import 'package:get_notifier_example/service.dart';
 
 class MyHomePage extends StatelessWidget {
   MyHomePage({Key? key, required this.title}) : super(key: key);
-  final s = GetIt.I.get<Service>();
   @override
   Widget build(BuildContext context) {
     return Material(Scaffold(
                 appBar: AppBar(
                   title: Text('Title'),
                 ),
-                body: Consumer<AppModel>(builder: (appModel, child) {
-                  return Center(
+                body: Center(
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: <Widget>[
                         const Text(
                           'You have pushed the button this many times:',
                         ),
-                        Text(
+                        Consumer<AppModel>(builder: (appModel, child) {
+                          return Text(
                           appModel.counter.toString(),
                           style: Theme.of(context).textTheme.headline4,
-                        ),
+                          ),
+                        }),
                       ],
                     ),
                   );
+                floatingActionButton: Worker<Service>(builder: (s, child) {
+                  return FloatingActionButton(
+                    onPressed: () {
+                      s.incrementCounter();
+                    },
+                    tooltip: 'Increment',
+                    child: const Icon(Icons.add),
+                  );
                 }),
-                floatingActionButton: FloatingActionButton(
-                  onPressed: () {
-                    s.incrementCounter();
-                  },
-                  child: const Icon(Icons.add),
-                ),
               );
             
           }),

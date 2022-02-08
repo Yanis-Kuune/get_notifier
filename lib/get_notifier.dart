@@ -15,6 +15,164 @@ class GetNotifier {
   }
 }
 
+// Singe model worker
+class Worker<A extends Object> extends SingleChildStatelessWidget {
+  Worker({
+    Key? key,
+    required this.builder,
+    Widget? child,
+  }) : super(key: key, child: child);
+
+  final Widget Function(
+    A value,
+    Widget? child,
+  ) builder;
+
+  final a = GetIt.I.get<A>();
+
+  @override
+  Widget buildWithChild(BuildContext context, Widget? child) {
+    return builder(
+      a,
+      child,
+    );
+  }
+}
+
+// Two models worker
+class Worker2<A extends Object, B extends Object> extends SingleChildStatelessWidget {
+  Worker2({
+    Key? key,
+    required this.builder,
+    Widget? child,
+  }) : super(key: key, child: child);
+
+  final Widget Function(
+    A value,
+    B value2,
+    Widget? child,
+  ) builder;
+
+  final a = GetIt.I.get<A>();
+  final b = GetIt.I.get<B>();
+
+  @override
+  Widget buildWithChild(BuildContext context, Widget? child) {
+    return builder(
+      a,
+      b,
+      child,
+    );
+  }
+}
+
+// Tree models worker
+class Worker3<A extends Object, B extends Object, C extends Object> extends SingleChildStatelessWidget {
+  Worker3({
+    Key? key,
+    required this.builder,
+    Widget? child,
+  }) : super(key: key, child: child);
+
+  final Widget Function(
+    A value,
+    B value2,
+    C value3,
+    Widget? child,
+  ) builder;
+
+  final a = GetIt.I.get<A>();
+  final b = GetIt.I.get<B>();
+  final c = GetIt.I.get<C>();
+
+  @override
+  Widget buildWithChild(BuildContext context, Widget? child) {
+    return builder(
+      a,
+      b,
+      c,
+      child,
+    );
+  }
+}
+
+// Five models worker
+class Worker5<A extends Object, B extends Object, C extends Object, D extends Object, E extends Object>
+    extends SingleChildStatelessWidget {
+  Worker5({
+    Key? key,
+    required this.builder,
+    Widget? child,
+  }) : super(key: key, child: child);
+
+  final Widget Function(
+    A value,
+    B value2,
+    C value3,
+    D value4,
+    E value5,
+    Widget? child,
+  ) builder;
+
+  final a = GetIt.I.get<A>();
+  final b = GetIt.I.get<B>();
+  final c = GetIt.I.get<C>();
+  final d = GetIt.I.get<D>();
+  final e = GetIt.I.get<E>();
+
+  @override
+  Widget buildWithChild(BuildContext context, Widget? child) {
+    return builder(
+      a,
+      b,
+      c,
+      d,
+      e,
+      child,
+    );
+  }
+}
+
+// Six models worker
+class Worker6<A extends Object, B extends Object, C extends Object, D extends Object, E extends Object,
+    F extends Object> extends SingleChildStatelessWidget {
+  Worker6({
+    Key? key,
+    required this.builder,
+    Widget? child,
+  }) : super(key: key, child: child);
+
+  final Widget Function(
+    A value,
+    B value2,
+    C value3,
+    D value4,
+    E value5,
+    F value6,
+    Widget? child,
+  ) builder;
+
+  final a = GetIt.I.get<A>();
+  final b = GetIt.I.get<B>();
+  final c = GetIt.I.get<C>();
+  final d = GetIt.I.get<D>();
+  final e = GetIt.I.get<E>();
+  final f = GetIt.I.get<F>();
+
+  @override
+  Widget buildWithChild(BuildContext context, Widget? child) {
+    return builder(
+      a,
+      b,
+      c,
+      d,
+      e,
+      f,
+      child,
+    );
+  }
+}
+
 // Singe model consumer
 class Consumer<A extends Object> extends SingleChildStatefulWidget {
   const Consumer({
