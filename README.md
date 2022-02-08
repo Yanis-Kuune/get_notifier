@@ -65,6 +65,20 @@ class Service {
 ```
 ### Usage in UI
 
+To utilise simple DI fuctionality inject singleton or factory just as GetIt plugin recomends:
+```dart
+final appModel = GetIt.I.get<AppModel>();
+```
+To make statless part of the UI, which does not rebuild due to the ```notifyListrers()``` method of ChangeNotifier ancestor simply use one of six Workers to collect up to 6 different ChangeNotifier classes in one snipet:
+1. Worker\<A\>(builder: (a, child)=> ...)
+2. Worker2<A, B>(builder: (a,b, child)=> ...)
+3. Worker3<A, B, C>(builder: (a,b,c, child)=> ...)
+4. Worker4<A, B, C, D>(builder: (a,b,c,d, child)=> ...)
+5. Worker5<A, B, C, D, E>(builder: (a,b,c,d,e, child)=> ...)
+6. Worker6<A, B, C, D, E, F>(builder: (a,b,c,d,e,f, child)=> ...)
+
+where A, B, C, D, E, and F are ChangeNotifier state classes
+
 To make reactive part of the UI, which rebuilds due to the ```notifyListrers()``` method of ChangeNotifier ancestor simply use one of six Consumers:
 1. Consumer\<A\>(builder: (a, child)=> ...)
 2. Consumer2<A, B>(builder: (a,b, child)=> ...)
@@ -75,15 +89,6 @@ To make reactive part of the UI, which rebuilds due to the ```notifyListrers()``
 
 where A, B, C, D, E, and F are ChangeNotifier state classes
 
-To make passive part of the UI, which does not rebuild due to the ```notifyListrers()``` method of ChangeNotifier ancestor simply use one of six Workers:
-1. Worker\<A\>(builder: (a, child)=> ...)
-2. Worker2<A, B>(builder: (a,b, child)=> ...)
-3. Worker3<A, B, C>(builder: (a,b,c, child)=> ...)
-4. Worker4<A, B, C, D>(builder: (a,b,c,d, child)=> ...)
-5. Worker5<A, B, C, D, E>(builder: (a,b,c,d,e, child)=> ...)
-6. Worker6<A, B, C, D, E, F>(builder: (a,b,c,d,e,f, child)=> ...)
-
-where A, B, C, D, E, and F are ChangeNotifier state classes
 
 For example:
 ```dart

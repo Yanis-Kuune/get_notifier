@@ -17,3 +17,6 @@
 ## 0.0.6
 
 * Add Worker classes to deal with stateless events.
+## 0.0.7
+
+* Correct Readme.md.
