@@ -9,10 +9,10 @@ void main() {
     ..registerFactory(() => Service());
   group('Increment', () {
     test('do encrease', () {
-      int _counter = GetIt.I.get<AppModel>().counter;
+      int counter = GetIt.I.get<AppModel>().counter;
       Service().incrementCounter();
-      int _newcounter = GetIt.I.get<AppModel>().counter;
-      expect(_counter, _newcounter - 1);
+      int newcounter = GetIt.I.get<AppModel>().counter;
+      expect(counter, newcounter - 1);
     });
   });
 }

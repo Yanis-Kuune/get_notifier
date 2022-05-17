@@ -20,3 +20,6 @@
 ## 0.0.7
 
 * Correct Readme.md.
+## 0.0.8
+
+* Check and fix Flutter 3.0 compatibility.
