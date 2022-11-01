@@ -23,3 +23,7 @@
 ## 0.0.8
 
 * Check and fix Flutter 3.0 compatibility.
+
+## 0.0.9
+
+* Check and fix Flutter 3.3 compatibility.
