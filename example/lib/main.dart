@@ -58,7 +58,7 @@ class MyHomePage extends StatelessWidget {
                         ),
                         Text(
                           appModel.counter.toString(),
-                          style: Theme.of(context).textTheme.headline4,
+                          style: Theme.of(context).textTheme.headlineMedium,
                         ),
                         ElevatedButton(
                             onPressed: () {
@@ -86,10 +86,10 @@ class MyHomePage extends StatelessWidget {
                 }),
               );
             } else {
-              return Column(
+              return const Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 mainAxisSize: MainAxisSize.min,
-                children: const [
+                children: [
                   Text('Waiting for initialisation'),
                   SizedBox(
                     height: 16,

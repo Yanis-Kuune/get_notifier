@@ -96,6 +96,39 @@ class Worker3<A extends Object, B extends Object, C extends Object> extends Sing
   }
 }
 
+class Worker4<A extends Object, B extends Object, C extends Object, D extends Object>
+    extends SingleChildStatelessWidget {
+  Worker4({
+    Key? key,
+    required this.builder,
+    Widget? child,
+  }) : super(key: key, child: child);
+
+  final Widget Function(
+    A value,
+    B value2,
+    C value3,
+    D value4,
+    Widget? child,
+  ) builder;
+
+  final a = GetIt.I.get<A>();
+  final b = GetIt.I.get<B>();
+  final c = GetIt.I.get<C>();
+  final d = GetIt.I.get<D>();
+
+  @override
+  Widget buildWithChild(BuildContext context, Widget? child) {
+    return builder(
+      a,
+      b,
+      c,
+      d,
+      child,
+    );
+  }
+}
+
 // Five models worker
 class Worker5<A extends Object, B extends Object, C extends Object, D extends Object, E extends Object>
     extends SingleChildStatelessWidget {
@@ -241,6 +274,7 @@ class Consumer2State<A extends Object, B extends Object> extends SingleChildStat
   void update() => setState(() => {});
   final a = GetIt.I.get<A>();
   final b = GetIt.I.get<B>();
+
   @override
   void initState() {
     if (a is ChangeNotifier) (a as ChangeNotifier).addListener(update);
@@ -292,6 +326,7 @@ class Consumer3State<A extends Object, B extends Object, C extends Object>
   final a = GetIt.I.get<A>();
   final b = GetIt.I.get<B>();
   final c = GetIt.I.get<C>();
+
   @override
   void initState() {
     if (a is ChangeNotifier) (a as ChangeNotifier).addListener(update);
@@ -349,6 +384,7 @@ class Consumer4State<A extends Object, B extends Object, C extends Object, D ext
   final b = GetIt.I.get<B>();
   final c = GetIt.I.get<C>();
   final d = GetIt.I.get<D>();
+
   @override
   void initState() {
     if (a is ChangeNotifier) (a as ChangeNotifier).addListener(update);
@@ -411,6 +447,7 @@ class Consumer5State<A extends Object, B extends Object, C extends Object, D ext
   final c = GetIt.I.get<C>();
   final d = GetIt.I.get<D>();
   final e = GetIt.I.get<E>();
+
   @override
   void initState() {
     if (a is ChangeNotifier) (a as ChangeNotifier).addListener(update);
@@ -478,6 +515,7 @@ class Consumer6State<A extends Object, B extends Object, C extends Object, D ext
   final d = GetIt.I.get<D>();
   final e = GetIt.I.get<E>();
   final f = GetIt.I.get<F>();
+
   @override
   void initState() {
     if (a is ChangeNotifier) (a as ChangeNotifier).addListener(update);
