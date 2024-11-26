@@ -28,6 +28,12 @@
 
 * Check and fix Flutter 3.3 compatibility.
 
-## 0.0.19
+## 0.0.10
 
 * Check and fix Flutter 3.24 compatibility.
+
+## 0.0.11
+
+* Update dependencies.
+* Fix some errors.
+* Change files structure for proper development
